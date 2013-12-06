@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BBCCD86318521C320041B622 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCCD86218521C320041B622 /* Cocoa.framework */; };
+		BBCCD86D18521C320041B622 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD86B18521C320041B622 /* InfoPlist.strings */; };
+		BBCCD86F18521C320041B622 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD86E18521C320041B622 /* main.m */; };
+		BBCCD87318521C320041B622 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD87118521C320041B622 /* Credits.rtf */; };
+		BBCCD87618521C320041B622 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD87518521C320041B622 /* AppDelegate.m */; };
+		BBCCD87918521C320041B622 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD87718521C320041B622 /* MainMenu.xib */; };
+		BBCCD87B18521C320041B622 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD87A18521C320041B622 /* Images.xcassets */; };
+		BBCCD88218521C320041B622 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCCD88118521C320041B622 /* XCTest.framework */; };
+		BBCCD88318521C320041B622 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCCD86218521C320041B622 /* Cocoa.framework */; };
+		BBCCD88B18521C320041B622 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD88918521C320041B622 /* InfoPlist.strings */; };
+		BBCCD88D18521C320041B622 /* CopyMateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD88C18521C320041B622 /* CopyMateTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BBCCD88418521C320041B622 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BBCCD85718521C320041B622 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BBCCD85E18521C320041B622;
+			remoteInfo = CopyMate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BBCCD85F18521C320041B622 /* CopyMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CopyMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBCCD86218521C320041B622 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		BBCCD86518521C320041B622 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		BBCCD86618521C320041B622 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BBCCD86718521C320041B622 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BBCCD86A18521C320041B622 /* CopyMate-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CopyMate-Info.plist"; sourceTree = "<group>"; };
+		BBCCD86C18521C320041B622 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BBCCD86E18521C320041B622 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BBCCD87018521C320041B622 /* CopyMate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CopyMate-Prefix.pch"; sourceTree = "<group>"; };
+		BBCCD87218521C320041B622 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		BBCCD87418521C320041B622 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BBCCD87518521C320041B622 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BBCCD87818521C320041B622 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		BBCCD87A18521C320041B622 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BBCCD88018521C320041B622 /* CopyMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CopyMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBCCD88118521C320041B622 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BBCCD88818521C320041B622 /* CopyMateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CopyMateTests-Info.plist"; sourceTree = "<group>"; };
+		BBCCD88A18521C320041B622 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BBCCD88C18521C320041B622 /* CopyMateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopyMateTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BBCCD85C18521C320041B622 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBCCD86318521C320041B622 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBCCD87D18521C320041B622 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBCCD88318521C320041B622 /* Cocoa.framework in Frameworks */,
+				BBCCD88218521C320041B622 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BBCCD85618521C320041B622 = {
+			isa = PBXGroup;
+			children = (
+				BBCCD86818521C320041B622 /* CopyMate */,
+				BBCCD88618521C320041B622 /* CopyMateTests */,
+				BBCCD86118521C320041B622 /* Frameworks */,
+				BBCCD86018521C320041B622 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BBCCD86018521C320041B622 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BBCCD85F18521C320041B622 /* CopyMate.app */,
+				BBCCD88018521C320041B622 /* CopyMateTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BBCCD86118521C320041B622 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBCCD86218521C320041B622 /* Cocoa.framework */,
+				BBCCD88118521C320041B622 /* XCTest.framework */,
+				BBCCD86418521C320041B622 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BBCCD86418521C320041B622 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBCCD86518521C320041B622 /* AppKit.framework */,
+				BBCCD86618521C320041B622 /* CoreData.framework */,
+				BBCCD86718521C320041B622 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		BBCCD86818521C320041B622 /* CopyMate */ = {
+			isa = PBXGroup;
+			children = (
+				BBCCD87418521C320041B622 /* AppDelegate.h */,
+				BBCCD87518521C320041B622 /* AppDelegate.m */,
+				BBCCD87718521C320041B622 /* MainMenu.xib */,
+				BBCCD87A18521C320041B622 /* Images.xcassets */,
+				BBCCD86918521C320041B622 /* Supporting Files */,
+			);
+			path = CopyMate;
+			sourceTree = "<group>";
+		};
+		BBCCD86918521C320041B622 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BBCCD86A18521C320041B622 /* CopyMate-Info.plist */,
+				BBCCD86B18521C320041B622 /* InfoPlist.strings */,
+				BBCCD86E18521C320041B622 /* main.m */,
+				BBCCD87018521C320041B622 /* CopyMate-Prefix.pch */,
+				BBCCD87118521C320041B622 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BBCCD88618521C320041B622 /* CopyMateTests */ = {
+			isa = PBXGroup;
+			children = (
+				BBCCD88C18521C320041B622 /* CopyMateTests.m */,
+				BBCCD88718521C320041B622 /* Supporting Files */,
+			);
+			path = CopyMateTests;
+			sourceTree = "<group>";
+		};
+		BBCCD88718521C320041B622 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BBCCD88818521C320041B622 /* CopyMateTests-Info.plist */,
+				BBCCD88918521C320041B622 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BBCCD85E18521C320041B622 /* CopyMate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBCCD89018521C320041B622 /* Build configuration list for PBXNativeTarget "CopyMate" */;
+			buildPhases = (
+				BBCCD85B18521C320041B622 /* Sources */,
+				BBCCD85C18521C320041B622 /* Frameworks */,
+				BBCCD85D18521C320041B622 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CopyMate;
+			productName = CopyMate;
+			productReference = BBCCD85F18521C320041B622 /* CopyMate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BBCCD87F18521C320041B622 /* CopyMateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBCCD89318521C320041B622 /* Build configuration list for PBXNativeTarget "CopyMateTests" */;
+			buildPhases = (
+				BBCCD87C18521C320041B622 /* Sources */,
+				BBCCD87D18521C320041B622 /* Frameworks */,
+				BBCCD87E18521C320041B622 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BBCCD88518521C320041B622 /* PBXTargetDependency */,
+			);
+			name = CopyMateTests;
+			productName = CopyMateTests;
+			productReference = BBCCD88018521C320041B622 /* CopyMateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BBCCD85718521C320041B622 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = kernelpanic.im;
+				TargetAttributes = {
+					BBCCD87F18521C320041B622 = {
+						TestTargetID = BBCCD85E18521C320041B622;
+					};
+				};
+			};
+			buildConfigurationList = BBCCD85A18521C320041B622 /* Build configuration list for PBXProject "CopyMate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BBCCD85618521C320041B622;
+			productRefGroup = BBCCD86018521C320041B622 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BBCCD85E18521C320041B622 /* CopyMate */,
+				BBCCD87F18521C320041B622 /* CopyMateTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BBCCD85D18521C320041B622 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBCCD86D18521C320041B622 /* InfoPlist.strings in Resources */,
+				BBCCD87B18521C320041B622 /* Images.xcassets in Resources */,
+				BBCCD87318521C320041B622 /* Credits.rtf in Resources */,
+				BBCCD87918521C320041B622 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBCCD87E18521C320041B622 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBCCD88B18521C320041B622 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BBCCD85B18521C320041B622 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBCCD87618521C320041B622 /* AppDelegate.m in Sources */,
+				BBCCD86F18521C320041B622 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBCCD87C18521C320041B622 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBCCD88D18521C320041B622 /* CopyMateTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BBCCD88518521C320041B622 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BBCCD85E18521C320041B622 /* CopyMate */;
+			targetProxy = BBCCD88418521C320041B622 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BBCCD86B18521C320041B622 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBCCD86C18521C320041B622 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BBCCD87118521C320041B622 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBCCD87218521C320041B622 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		BBCCD87718521C320041B622 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBCCD87818521C320041B622 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		BBCCD88918521C320041B622 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BBCCD88A18521C320041B622 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BBCCD88E18521C320041B622 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BBCCD88F18521C320041B622 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BBCCD89118521C320041B622 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CopyMate/CopyMate-Prefix.pch";
+				INFOPLIST_FILE = "CopyMate/CopyMate-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BBCCD89218521C320041B622 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CopyMate/CopyMate-Prefix.pch";
+				INFOPLIST_FILE = "CopyMate/CopyMate-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BBCCD89418521C320041B622 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CopyMate.app/Contents/MacOS/CopyMate";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CopyMate/CopyMate-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CopyMateTests/CopyMateTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BBCCD89518521C320041B622 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CopyMate.app/Contents/MacOS/CopyMate";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CopyMate/CopyMate-Prefix.pch";
+				INFOPLIST_FILE = "CopyMateTests/CopyMateTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BBCCD85A18521C320041B622 /* Build configuration list for PBXProject "CopyMate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBCCD88E18521C320041B622 /* Debug */,
+				BBCCD88F18521C320041B622 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBCCD89018521C320041B622 /* Build configuration list for PBXNativeTarget "CopyMate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBCCD89118521C320041B622 /* Debug */,
+				BBCCD89218521C320041B622 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BBCCD89318521C320041B622 /* Build configuration list for PBXNativeTarget "CopyMateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBCCD89418521C320041B622 /* Debug */,
+				BBCCD89518521C320041B622 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BBCCD85718521C320041B622 /* Project object */;
+}
