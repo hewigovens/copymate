@@ -10,14 +10,29 @@
 		BBCCD86318521C320041B622 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCCD86218521C320041B622 /* Cocoa.framework */; };
 		BBCCD86D18521C320041B622 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD86B18521C320041B622 /* InfoPlist.strings */; };
 		BBCCD86F18521C320041B622 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD86E18521C320041B622 /* main.m */; };
-		BBCCD87318521C320041B622 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD87118521C320041B622 /* Credits.rtf */; };
 		BBCCD87618521C320041B622 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD87518521C320041B622 /* AppDelegate.m */; };
 		BBCCD87918521C320041B622 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD87718521C320041B622 /* MainMenu.xib */; };
-		BBCCD87B18521C320041B622 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD87A18521C320041B622 /* Images.xcassets */; };
 		BBCCD88218521C320041B622 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCCD88118521C320041B622 /* XCTest.framework */; };
 		BBCCD88318521C320041B622 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCCD86218521C320041B622 /* Cocoa.framework */; };
 		BBCCD88B18521C320041B622 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD88918521C320041B622 /* InfoPlist.strings */; };
 		BBCCD88D18521C320041B622 /* CopyMateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD88C18521C320041B622 /* CopyMateTests.m */; };
+		BBCCD89B185226A20041B622 /* NSPasteboard_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD898185226A20041B622 /* NSPasteboard_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BBCCD89C185226A20041B622 /* QCUIElement.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD89A185226A20041B622 /* QCUIElement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BBCCD8AB185226B10041B622 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD89E185226B10041B622 /* .gitignore */; };
+		BBCCD8AC185226B10041B622 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD89F185226B10041B622 /* LICENSE */; };
+		BBCCD8AD185226B10041B622 /* MASShortcut+Monitoring.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD8A1185226B10041B622 /* MASShortcut+Monitoring.m */; };
+		BBCCD8AE185226B10041B622 /* MASShortcut+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD8A3185226B10041B622 /* MASShortcut+UserDefaults.m */; };
+		BBCCD8AF185226B10041B622 /* MASShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD8A5185226B10041B622 /* MASShortcut.m */; };
+		BBCCD8B0185226B10041B622 /* MASShortcutView+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD8A7185226B10041B622 /* MASShortcutView+UserDefaults.m */; };
+		BBCCD8B1185226B10041B622 /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD8A9185226B10041B622 /* MASShortcutView.m */; };
+		BBCCD8B2185226B10041B622 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8AA185226B10041B622 /* README.md */; };
+		BBCCD8B4185227140041B622 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCCD8B3185227140041B622 /* Carbon.framework */; };
+		BBCCD8BA185227F50041B622 /* CMPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD8B8185227F50041B622 /* CMPreferencesController.m */; };
+		BBCCD8BB185227F50041B622 /* CMPreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8B9185227F50041B622 /* CMPreferencesController.xib */; };
+		BBCCD8C2185362600041B622 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8BF185362600041B622 /* icon.icns */; };
+		BBCCD8C3185362600041B622 /* statusMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8C0185362600041B622 /* statusMenu.png */; };
+		BBCCD8C4185362600041B622 /* statusMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8C1185362600041B622 /* statusMenu@2x.png */; };
+		BBCCD8C718537B990041B622 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD8C618537B990041B622 /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,16 +55,40 @@
 		BBCCD86C18521C320041B622 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BBCCD86E18521C320041B622 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BBCCD87018521C320041B622 /* CopyMate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CopyMate-Prefix.pch"; sourceTree = "<group>"; };
-		BBCCD87218521C320041B622 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		BBCCD87418521C320041B622 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BBCCD87518521C320041B622 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BBCCD87818521C320041B622 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		BBCCD87A18521C320041B622 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BBCCD88018521C320041B622 /* CopyMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CopyMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCCD88118521C320041B622 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		BBCCD88818521C320041B622 /* CopyMateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CopyMateTests-Info.plist"; sourceTree = "<group>"; };
 		BBCCD88A18521C320041B622 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BBCCD88C18521C320041B622 /* CopyMateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopyMateTests.m; sourceTree = "<group>"; };
+		BBCCD897185226A20041B622 /* NSPasteboard_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPasteboard_Extensions.h; sourceTree = "<group>"; };
+		BBCCD898185226A20041B622 /* NSPasteboard_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSPasteboard_Extensions.m; sourceTree = "<group>"; };
+		BBCCD899185226A20041B622 /* QCUIElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCUIElement.h; sourceTree = "<group>"; };
+		BBCCD89A185226A20041B622 /* QCUIElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCUIElement.m; sourceTree = "<group>"; };
+		BBCCD89E185226B10041B622 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		BBCCD89F185226B10041B622 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BBCCD8A0185226B10041B622 /* MASShortcut+Monitoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcut+Monitoring.h"; sourceTree = "<group>"; };
+		BBCCD8A1185226B10041B622 /* MASShortcut+Monitoring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcut+Monitoring.m"; sourceTree = "<group>"; };
+		BBCCD8A2185226B10041B622 /* MASShortcut+UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcut+UserDefaults.h"; sourceTree = "<group>"; };
+		BBCCD8A3185226B10041B622 /* MASShortcut+UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcut+UserDefaults.m"; sourceTree = "<group>"; };
+		BBCCD8A4185226B10041B622 /* MASShortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShortcut.h; sourceTree = "<group>"; };
+		BBCCD8A5185226B10041B622 /* MASShortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShortcut.m; sourceTree = "<group>"; };
+		BBCCD8A6185226B10041B622 /* MASShortcutView+UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcutView+UserDefaults.h"; sourceTree = "<group>"; };
+		BBCCD8A7185226B10041B622 /* MASShortcutView+UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcutView+UserDefaults.m"; sourceTree = "<group>"; };
+		BBCCD8A8185226B10041B622 /* MASShortcutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShortcutView.h; sourceTree = "<group>"; };
+		BBCCD8A9185226B10041B622 /* MASShortcutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShortcutView.m; sourceTree = "<group>"; };
+		BBCCD8AA185226B10041B622 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		BBCCD8B3185227140041B622 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		BBCCD8B7185227F50041B622 /* CMPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPreferencesController.h; sourceTree = "<group>"; };
+		BBCCD8B8185227F50041B622 /* CMPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPreferencesController.m; sourceTree = "<group>"; };
+		BBCCD8B9185227F50041B622 /* CMPreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMPreferencesController.xib; sourceTree = "<group>"; };
+		BBCCD8BF185362600041B622 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		BBCCD8C0185362600041B622 /* statusMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusMenu.png; sourceTree = "<group>"; };
+		BBCCD8C1185362600041B622 /* statusMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statusMenu@2x.png"; sourceTree = "<group>"; };
+		BBCCD8C51853732A0041B622 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		BBCCD8C618537B990041B622 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBCCD8B4185227140041B622 /* Carbon.framework in Frameworks */,
 				BBCCD86318521C320041B622 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +135,7 @@
 		BBCCD86118521C320041B622 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BBCCD8B3185227140041B622 /* Carbon.framework */,
 				BBCCD86218521C320041B622 /* Cocoa.framework */,
 				BBCCD88118521C320041B622 /* XCTest.framework */,
 				BBCCD86418521C320041B622 /* Other Frameworks */,
@@ -115,10 +156,16 @@
 		BBCCD86818521C320041B622 /* CopyMate */ = {
 			isa = PBXGroup;
 			children = (
+				BBCCD89D185226B10041B622 /* MASShortcut */,
+				BBCCD896185226A20041B622 /* QuickCursor */,
 				BBCCD87418521C320041B622 /* AppDelegate.h */,
 				BBCCD87518521C320041B622 /* AppDelegate.m */,
 				BBCCD87718521C320041B622 /* MainMenu.xib */,
-				BBCCD87A18521C320041B622 /* Images.xcassets */,
+				BBCCD8B7185227F50041B622 /* CMPreferencesController.h */,
+				BBCCD8B8185227F50041B622 /* CMPreferencesController.m */,
+				BBCCD8B9185227F50041B622 /* CMPreferencesController.xib */,
+				BBCCD8C51853732A0041B622 /* Constants.h */,
+				BBCCD8C618537B990041B622 /* Constants.m */,
 				BBCCD86918521C320041B622 /* Supporting Files */,
 			);
 			path = CopyMate;
@@ -127,11 +174,11 @@
 		BBCCD86918521C320041B622 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BBCCD8BE185362600041B622 /* Images */,
 				BBCCD86A18521C320041B622 /* CopyMate-Info.plist */,
 				BBCCD86B18521C320041B622 /* InfoPlist.strings */,
 				BBCCD86E18521C320041B622 /* main.m */,
 				BBCCD87018521C320041B622 /* CopyMate-Prefix.pch */,
-				BBCCD87118521C320041B622 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,6 +199,47 @@
 				BBCCD88918521C320041B622 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BBCCD896185226A20041B622 /* QuickCursor */ = {
+			isa = PBXGroup;
+			children = (
+				BBCCD897185226A20041B622 /* NSPasteboard_Extensions.h */,
+				BBCCD898185226A20041B622 /* NSPasteboard_Extensions.m */,
+				BBCCD899185226A20041B622 /* QCUIElement.h */,
+				BBCCD89A185226A20041B622 /* QCUIElement.m */,
+			);
+			path = QuickCursor;
+			sourceTree = "<group>";
+		};
+		BBCCD89D185226B10041B622 /* MASShortcut */ = {
+			isa = PBXGroup;
+			children = (
+				BBCCD89E185226B10041B622 /* .gitignore */,
+				BBCCD89F185226B10041B622 /* LICENSE */,
+				BBCCD8A0185226B10041B622 /* MASShortcut+Monitoring.h */,
+				BBCCD8A1185226B10041B622 /* MASShortcut+Monitoring.m */,
+				BBCCD8A2185226B10041B622 /* MASShortcut+UserDefaults.h */,
+				BBCCD8A3185226B10041B622 /* MASShortcut+UserDefaults.m */,
+				BBCCD8A4185226B10041B622 /* MASShortcut.h */,
+				BBCCD8A5185226B10041B622 /* MASShortcut.m */,
+				BBCCD8A6185226B10041B622 /* MASShortcutView+UserDefaults.h */,
+				BBCCD8A7185226B10041B622 /* MASShortcutView+UserDefaults.m */,
+				BBCCD8A8185226B10041B622 /* MASShortcutView.h */,
+				BBCCD8A9185226B10041B622 /* MASShortcutView.m */,
+				BBCCD8AA185226B10041B622 /* README.md */,
+			);
+			path = MASShortcut;
+			sourceTree = SOURCE_ROOT;
+		};
+		BBCCD8BE185362600041B622 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BBCCD8BF185362600041B622 /* icon.icns */,
+				BBCCD8C0185362600041B622 /* statusMenu.png */,
+				BBCCD8C1185362600041B622 /* statusMenu@2x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,9 +318,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBCCD8BB185227F50041B622 /* CMPreferencesController.xib in Resources */,
+				BBCCD8C2185362600041B622 /* icon.icns in Resources */,
+				BBCCD8C3185362600041B622 /* statusMenu.png in Resources */,
 				BBCCD86D18521C320041B622 /* InfoPlist.strings in Resources */,
-				BBCCD87B18521C320041B622 /* Images.xcassets in Resources */,
-				BBCCD87318521C320041B622 /* Credits.rtf in Resources */,
+				BBCCD8C4185362600041B622 /* statusMenu@2x.png in Resources */,
+				BBCCD8AB185226B10041B622 /* .gitignore in Resources */,
+				BBCCD8B2185226B10041B622 /* README.md in Resources */,
+				BBCCD8AC185226B10041B622 /* LICENSE in Resources */,
 				BBCCD87918521C320041B622 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,7 +345,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBCCD8C718537B990041B622 /* Constants.m in Sources */,
+				BBCCD8AE185226B10041B622 /* MASShortcut+UserDefaults.m in Sources */,
+				BBCCD8AF185226B10041B622 /* MASShortcut.m in Sources */,
+				BBCCD8AD185226B10041B622 /* MASShortcut+Monitoring.m in Sources */,
+				BBCCD8B0185226B10041B622 /* MASShortcutView+UserDefaults.m in Sources */,
+				BBCCD8BA185227F50041B622 /* CMPreferencesController.m in Sources */,
+				BBCCD89C185226A20041B622 /* QCUIElement.m in Sources */,
+				BBCCD8B1185226B10041B622 /* MASShortcutView.m in Sources */,
 				BBCCD87618521C320041B622 /* AppDelegate.m in Sources */,
+				BBCCD89B185226A20041B622 /* NSPasteboard_Extensions.m in Sources */,
 				BBCCD86F18521C320041B622 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,14 +384,6 @@
 				BBCCD86C18521C320041B622 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		BBCCD87118521C320041B622 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BBCCD87218521C320041B622 /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		BBCCD87718521C320041B622 /* MainMenu.xib */ = {
@@ -342,7 +436,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -374,7 +468,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -383,6 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CopyMate/CopyMate-Prefix.pch";
@@ -396,6 +491,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CopyMate/CopyMate-Prefix.pch";

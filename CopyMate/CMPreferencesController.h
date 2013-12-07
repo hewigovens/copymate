@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  CMPreferencesController.h
 //  CopyMate
 //
 //  Created by hewig on 12/6/13.
@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface CMPreferencesController : NSWindowController
 
 @end
