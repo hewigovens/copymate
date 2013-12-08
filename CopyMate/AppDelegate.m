@@ -16,10 +16,6 @@
 #import "MASShortcut+UserDefaults.h"
 #import "MASShortcut+Monitoring.h"
 
-#import "AppDelegate.h"
-#import "CMPreferencesController.h"
-#import "MASShortcut.h" interface
-
 @interface AppDelegate()
 
 @property (strong, nonatomic) NSStatusItem* statusItem;
