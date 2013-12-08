@@ -16,7 +16,9 @@
 #import "MASShortcut+UserDefaults.h"
 #import "MASShortcut+Monitoring.h"
 
-void *CMUserDefaultsContext = &CMUserDefaultsContext;
+#import "AppDelegate.h"
+#import "CMPreferencesController.h"
+#import "MASShortcut.h" interface
 
 @interface AppDelegate()
 
@@ -89,7 +91,26 @@ void *CMUserDefaultsContext = &CMUserDefaultsContext;
 }
 
 -(void)userDefaultsDidChange:(NSNotification*)aNotification{
-    [self registerShortcuts];
+    NSDictionary* prefDict = [self.defaults persistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]];
+    BOOL needRegister = NO;
+    if (![prefDict[MASPrefKeyCopyShortcut] isEqualTo:self.prefsDict[MASPrefKeyCopyShortcut]]){
+        self.prefsDict[MASPrefKeyCopyShortcut] = prefDict[MASPrefKeyCopyShortcut];
+        needRegister = YES;
+    }
+    if(![prefDict[MASPrefKeyDefaultFormatShortcut] isEqualTo:self.prefsDict[MASPrefKeyDefaultFormatShortcut]]){
+        self.prefsDict[MASPrefKeyDefaultFormatShortcut] = prefDict[MASPrefKeyDefaultFormatShortcut];
+        needRegister = YES;
+    }
+    if(![prefDict[MASPrefKeyAlterFormatShortcut] isEqualTo:self.prefsDict[MASPrefKeyAlterFormatShortcut]]){
+        self.prefsDict[MASPrefKeyAlterFormatShortcut] = prefDict[MASPrefKeyAlterFormatShortcut];
+        needRegister = YES;
+    }
+    
+    if (needRegister) {
+        [self registerShortcuts];
+        NSLog(@"==> re register shortcuts");
+    }
+    NSLog(@"==> userDefaultsDidChange");
 }
 
 #pragma mark helper
@@ -135,7 +156,8 @@ void *CMUserDefaultsContext = &CMUserDefaultsContext;
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDefaultsDidChange:) name:NSUserDefaultsDidChangeNotification object:self.defaults];
-
+    
+    self.currentFormat = self.prefsDict[CopyMateDefaultFormat];
     self.prefController.prefsDict = self.prefsDict;
 }
 
@@ -175,7 +197,7 @@ void *CMUserDefaultsContext = &CMUserDefaultsContext;
     
     if (editString) {
         NSString* appendString = [NSString stringWithFormat:self.currentFormat, lastCopyString, editString];
-        NSLog(@"appendString is %@", appendString);
+        NSLog(@"==> append string result:%@", appendString);
         
         [[NSPasteboard generalPasteboard] clearContents];
         [[NSPasteboard generalPasteboard] writeObjects:@[appendString]];
