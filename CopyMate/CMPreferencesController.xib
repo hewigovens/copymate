@@ -7,6 +7,19 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CMPreferencesController">
             <connections>
+                <outlet property="aboutView" destination="loL-Vt-sQr" id="Ybl-MF-ruQ"/>
+                <outlet property="alterFormatShortcutView" destination="Bmc-j3-tll" id="Iyq-iQ-VEb"/>
+                <outlet property="alterTextField" destination="JMj-GH-7xT" id="lqz-WU-dxj"/>
+                <outlet property="appendCopyshortcutView" destination="h1w-AR-Fer" id="70X-qm-Inj"/>
+                <outlet property="autoUpdateCheckbox" destination="cfR-cW-iqg" id="slx-lQ-O8D"/>
+                <outlet property="defaultFormatShortcutView" destination="Xwj-f5-rM9" id="KMR-To-ede"/>
+                <outlet property="defaultTextField" destination="tmD-zE-xH2" id="Dom-N9-CQ1"/>
+                <outlet property="generalView" destination="RGr-fH-zYM" id="3Ke-EV-rdJ"/>
+                <outlet property="homepageButton" destination="Szo-Y8-Rrs" id="ctk-wL-dkf"/>
+                <outlet property="shortcutsView" destination="eCS-sM-Cm8" id="CXp-mZ-tay"/>
+                <outlet property="startupCheckbox" destination="C67-vn-tEY" id="aoK-cu-czk"/>
+                <outlet property="toolbar" destination="wGH-mf-8Zr" id="2ZB-jM-VMH"/>
+                <outlet property="versionLabel" destination="4RS-Lm-gvX" id="L85-fW-4tE"/>
                 <outlet property="window" destination="1" id="3"/>
             </connections>
         </customObject>
@@ -23,9 +36,21 @@
             </view>
             <toolbar key="toolbar" implicitIdentifier="50E8B05B-C6BD-4F8B-8D2F-DE06639C8768" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="wGH-mf-8Zr">
                 <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="7A7FF07E-448E-42C4-AB8A-3EE0A631D589" label="Gerneral" paletteLabel="Gerneral" tag="-1" id="HVu-eS-Ugh"/>
-                    <toolbarItem implicitItemIdentifier="C6C7A8EF-59D9-4C1A-AE5B-434D9A3349E0" label="Shortcuts" paletteLabel="Shortcuts" tag="-1" id="D09-gu-Bra"/>
-                    <toolbarItem implicitItemIdentifier="90B2EA1B-F89F-4810-8E4A-CE0D8098B66C" label="Updates" paletteLabel="Updates" tag="-1" id="9Cz-1e-hMW"/>
+                    <toolbarItem implicitItemIdentifier="7A7FF07E-448E-42C4-AB8A-3EE0A631D589" label="Gerneral" paletteLabel="Gerneral" image="NSPreferencesGeneral" id="HVu-eS-Ugh">
+                        <connections>
+                            <action selector="showPrefView:" target="-2" id="tpl-LQ-VBW"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="C6C7A8EF-59D9-4C1A-AE5B-434D9A3349E0" label="Shortcuts" paletteLabel="Shortcuts" tag="1" image="PrefsKeyboard" id="D09-gu-Bra">
+                        <connections>
+                            <action selector="showPrefView:" target="-2" id="fr7-um-qcM"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="90B2EA1B-F89F-4810-8E4A-CE0D8098B66C" label="About" paletteLabel="About" tag="2" image="NSInfo" id="9Cz-1e-hMW">
+                        <connections>
+                            <action selector="showPrefView:" target="-2" id="ooj-yd-jOW"/>
+                        </connections>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="HVu-eS-Ugh"/>
@@ -37,5 +62,196 @@
                 <outlet property="delegate" destination="-2" id="4"/>
             </connections>
         </window>
+        <customView id="RGr-fH-zYM" userLabel="Gerneral View">
+            <rect key="frame" x="0.0" y="0.0" width="443" height="156"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C67-vn-tEY">
+                    <rect key="frame" x="124" y="88" width="126" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Launch on Login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="0Ew-vv-N9J">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="toggleLaunchOnLogin:" target="-2" id="3a2-CF-Zvh"/>
+                        <binding destination="6mU-E2-QG7" name="value" keyPath="values.CMStartAtLogin" id="FjN-Fb-ZfQ"/>
+                    </connections>
+                </button>
+                <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfR-cW-iqg">
+                    <rect key="frame" x="124" y="63" width="196" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Automatically check update" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="1gK-yd-aaM">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="toggleCheckUpdate:" target="-2" id="7kU-LD-MKN"/>
+                        <binding destination="6mU-E2-QG7" name="value" keyPath="values.CMAutoCheckUpdate" id="8MO-22-poZ"/>
+                    </connections>
+                </button>
+            </subviews>
+        </customView>
+        <customView identifier="kCMGerneralTab" id="eCS-sM-Cm8" userLabel="Shortcuts View">
+            <rect key="frame" x="0.0" y="0.0" width="402" height="296"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <box autoresizesSubviews="NO" fixedFrame="YES" title="Shortcuts" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="BdY-K8-rS5">
+                    <rect key="frame" x="12" y="156" width="373" height="120"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <view key="contentView">
+                        <rect key="frame" x="1" y="1" width="371" height="104"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h1w-AR-Fer" customClass="MASShortcutView">
+                                <rect key="frame" x="184" y="69" width="151" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xwj-f5-rM9" customClass="MASShortcutView">
+                                <rect key="frame" x="184" y="45" width="151" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bmc-j3-tll" customClass="MASShortcutView">
+                                <rect key="frame" x="184" y="21" width="151" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dPG-Dg-dvB">
+                                <rect key="frame" x="80" y="70" width="93" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Copy Append:" id="rz2-dw-o46">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VB8-vl-7Lf">
+                                <rect key="frame" x="55" y="48" width="118" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Default separator:" id="kIy-LY-FHv">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ut6-GT-boa">
+                                <rect key="frame" x="33" y="26" width="140" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Alternative separator:" id="Y6X-oo-Pwk">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </box>
+                <box autoresizesSubviews="NO" fixedFrame="YES" title="Separators" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="yOZ-ih-reS">
+                    <rect key="frame" x="12" y="16" width="373" height="114"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <view key="contentView">
+                        <rect key="frame" x="1" y="1" width="371" height="98"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tmD-zE-xH2">
+                                <rect key="frame" x="186" y="57" width="96" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="bZ6-6o-FcH">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="enterKeyPressed:" target="-2" id="0VT-Sn-mtK"/>
+                                </connections>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JMj-GH-7xT">
+                                <rect key="frame" x="186" y="34" width="96" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="8f5-JV-EqF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="enterKeyPressed:" target="-2" id="1qu-F7-UYL"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Nm-9i-hFX">
+                                <rect key="frame" x="60" y="60" width="118" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Default separator:" id="Qd5-VJ-AiY">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UJw-qb-aE5">
+                                <rect key="frame" x="38" y="37" width="140" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Alternative separator:" id="45y-ih-71z">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </box>
+            </subviews>
+        </customView>
+        <customView id="loL-Vt-sQr" userLabel="About View">
+            <rect key="frame" x="0.0" y="0.0" width="443" height="156"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ORf-Wh-R5k">
+                    <rect key="frame" x="129" y="105" width="61" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Versions:" id="p1y-eT-QPH">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Szo-Y8-Rrs">
+                    <rect key="frame" x="198" y="80" width="214" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="square" title="Homepage" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="WdC-DX-5Go">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="openHomepage:" target="-2" id="38q-WZ-Zgc"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UNK-0I-Rmm">
+                    <rect key="frame" x="114" y="80" width="76" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Homepage:" id="m9o-mn-VbB">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4RS-Lm-gvX">
+                    <rect key="frame" x="196" y="105" width="38" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="FVA-9u-oGz">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="6mU-E2-QG7"/>
     </objects>
+    <resources>
+        <image name="NSInfo" width="32" height="32"/>
+        <image name="NSPreferencesGeneral" width="32" height="32"/>
+        <image name="PrefsKeyboard" width="32" height="32"/>
+    </resources>
 </document>

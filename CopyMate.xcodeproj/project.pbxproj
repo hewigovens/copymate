@@ -29,10 +29,11 @@
 		BBCCD8B4185227140041B622 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCCD8B3185227140041B622 /* Carbon.framework */; };
 		BBCCD8BA185227F50041B622 /* CMPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD8B8185227F50041B622 /* CMPreferencesController.m */; };
 		BBCCD8BB185227F50041B622 /* CMPreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8B9185227F50041B622 /* CMPreferencesController.xib */; };
-		BBCCD8C2185362600041B622 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8BF185362600041B622 /* icon.icns */; };
-		BBCCD8C3185362600041B622 /* statusMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8C0185362600041B622 /* statusMenu.png */; };
-		BBCCD8C4185362600041B622 /* statusMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8C1185362600041B622 /* statusMenu@2x.png */; };
 		BBCCD8C718537B990041B622 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD8C618537B990041B622 /* Constants.m */; };
+		BBCCD8CE185414870041B622 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8CA185414870041B622 /* icon.icns */; };
+		BBCCD8CF185414870041B622 /* PrefsKeyboard.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8CB185414870041B622 /* PrefsKeyboard.tiff */; };
+		BBCCD8D0185414870041B622 /* statusMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8CC185414870041B622 /* statusMenu.png */; };
+		BBCCD8D1185414870041B622 /* statusMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8CD185414870041B622 /* statusMenu@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,11 +85,12 @@
 		BBCCD8B7185227F50041B622 /* CMPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPreferencesController.h; sourceTree = "<group>"; };
 		BBCCD8B8185227F50041B622 /* CMPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPreferencesController.m; sourceTree = "<group>"; };
 		BBCCD8B9185227F50041B622 /* CMPreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMPreferencesController.xib; sourceTree = "<group>"; };
-		BBCCD8BF185362600041B622 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
-		BBCCD8C0185362600041B622 /* statusMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusMenu.png; sourceTree = "<group>"; };
-		BBCCD8C1185362600041B622 /* statusMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statusMenu@2x.png"; sourceTree = "<group>"; };
 		BBCCD8C51853732A0041B622 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		BBCCD8C618537B990041B622 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		BBCCD8CA185414870041B622 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = Images/icon.icns; sourceTree = "<group>"; };
+		BBCCD8CB185414870041B622 /* PrefsKeyboard.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = PrefsKeyboard.tiff; path = Images/PrefsKeyboard.tiff; sourceTree = "<group>"; };
+		BBCCD8CC185414870041B622 /* statusMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statusMenu.png; path = Images/statusMenu.png; sourceTree = "<group>"; };
+		BBCCD8CD185414870041B622 /* statusMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusMenu@2x.png"; path = "Images/statusMenu@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +176,7 @@
 		BBCCD86918521C320041B622 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BBCCD8BE185362600041B622 /* Images */,
+				BBCCD8D21854148B0041B622 /* Images */,
 				BBCCD86A18521C320041B622 /* CopyMate-Info.plist */,
 				BBCCD86B18521C320041B622 /* InfoPlist.strings */,
 				BBCCD86E18521C320041B622 /* main.m */,
@@ -232,14 +234,15 @@
 			path = MASShortcut;
 			sourceTree = SOURCE_ROOT;
 		};
-		BBCCD8BE185362600041B622 /* Images */ = {
+		BBCCD8D21854148B0041B622 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				BBCCD8BF185362600041B622 /* icon.icns */,
-				BBCCD8C0185362600041B622 /* statusMenu.png */,
-				BBCCD8C1185362600041B622 /* statusMenu@2x.png */,
+				BBCCD8CA185414870041B622 /* icon.icns */,
+				BBCCD8CB185414870041B622 /* PrefsKeyboard.tiff */,
+				BBCCD8CC185414870041B622 /* statusMenu.png */,
+				BBCCD8CD185414870041B622 /* statusMenu@2x.png */,
 			);
-			path = Images;
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,10 +322,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBCCD8BB185227F50041B622 /* CMPreferencesController.xib in Resources */,
-				BBCCD8C2185362600041B622 /* icon.icns in Resources */,
-				BBCCD8C3185362600041B622 /* statusMenu.png in Resources */,
+				BBCCD8CE185414870041B622 /* icon.icns in Resources */,
+				BBCCD8CF185414870041B622 /* PrefsKeyboard.tiff in Resources */,
+				BBCCD8D1185414870041B622 /* statusMenu@2x.png in Resources */,
+				BBCCD8D0185414870041B622 /* statusMenu.png in Resources */,
 				BBCCD86D18521C320041B622 /* InfoPlist.strings in Resources */,
-				BBCCD8C4185362600041B622 /* statusMenu@2x.png in Resources */,
 				BBCCD8AB185226B10041B622 /* .gitignore in Resources */,
 				BBCCD8B2185226B10041B622 /* README.md in Resources */,
 				BBCCD8AC185226B10041B622 /* LICENSE in Resources */,

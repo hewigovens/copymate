@@ -10,4 +10,7 @@
 
 @interface CMPreferencesController : NSWindowController
 
+@property (weak, nonatomic) NSMutableDictionary* prefsDict;
+-(void)displayWindow;
+
 @end
