@@ -88,6 +88,10 @@ void *CMUserDefaultsContext = &CMUserDefaultsContext;
     }
 }
 
+-(void)userDefaultsDidChange:(NSNotification*)aNotification{
+    [self registerShortcuts];
+}
+
 #pragma mark helper
 
 -(void)setupStatusItem
@@ -129,6 +133,8 @@ void *CMUserDefaultsContext = &CMUserDefaultsContext;
         [self.prefsDict addObserver:self forKeyPath:[key description]
                             options:NSKeyValueObservingOptionNew context:(__bridge void *)(key)];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDefaultsDidChange:) name:NSUserDefaultsDidChangeNotification object:self.defaults];
 
     self.prefController.prefsDict = self.prefsDict;
 }
@@ -146,10 +152,12 @@ void *CMUserDefaultsContext = &CMUserDefaultsContext;
     
     void(^defaultFormatHandler)(void) = ^{
         self.currentFormat = self.prefsDict[CopyMateDefaultFormat];
+        NSLog(@"==> switch to default format");
     };
     
     void(^alterFormatHandler)(void) = ^{
         self.currentFormat = self.prefsDict[CopyMateAlterFormat];
+        NSLog(@"==> switch to alter format");
     };
     
     [self registerShortcut:MASPrefKeyCopyShortcut Keycode:kVK_ANSI_C Handler:copyHandler];
@@ -179,9 +187,11 @@ void *CMUserDefaultsContext = &CMUserDefaultsContext;
                 Handler:(void(^)(void)) handler
 {
     if ([self.defaults objectForKey:defaultsKey]) {
-        [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MASPrefKeyCopyShortcut handler:handler];
+        [MASShortcut registerGlobalShortcutWithUserDefaultsKey:defaultsKey handler:handler];
     } else{
         MASShortcut* shortcut = [MASShortcut shortcutWithKeyCode:defaultKeyCode modifierFlags:NSControlKeyMask|NSShiftKeyMask];
+        self.prefsDict[defaultsKey] = [shortcut data];
+        [self persistDefaults];
         [MASShortcut addGlobalHotkeyMonitorWithShortcut:shortcut handler:handler];
     }
 }
