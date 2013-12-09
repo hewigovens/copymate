@@ -63,6 +63,11 @@
 -(void)openPreferences{
     NSLog(@"==> openPreferences");
     [self.prefController displayWindow];
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDefaultsDidChange:) name:NSUserDefaultsDidChangeNotification object:self.defaults];
+    });
 }
 
 -(void)quitApp{
@@ -88,6 +93,7 @@
 
 -(void)userDefaultsDidChange:(NSNotification*)aNotification{
     NSDictionary* prefDict = [self.defaults persistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]];
+    
     BOOL needRegister = NO;
     if (![prefDict[MASPrefKeyCopyShortcut] isEqualTo:self.prefsDict[MASPrefKeyCopyShortcut]]){
         self.prefsDict[MASPrefKeyCopyShortcut] = prefDict[MASPrefKeyCopyShortcut];
@@ -129,9 +135,16 @@
 -(void)setupPreferences
 {
     self.prefController = [[CMPreferencesController alloc] initWithWindowNibName:@"CMPreferencesController"];
-    self.prefsDict = [[self.defaults persistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]] mutableCopy];
+    
+    NSDictionary* prefsDict = [self.defaults persistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]];
+    if (prefsDict) {
+        self.prefsDict = [prefsDict mutableCopy];
+    } else{
+        self.prefsDict = [NSMutableDictionary new];
+    }
     
     if (![self.defaults objectForKey:CopyMateNotFirstRun]) {
+        
         self.prefsDict[CopyMateDefaultFormat] = @"%@\n%@";
         self.currentFormat = self.prefsDict[CopyMateDefaultFormat];
         
@@ -139,7 +152,7 @@
         self.currentFormat = self.prefsDict[CopyMateAlterFormat];
         
         self.prefsDict[CopyMateAutoCheckUpdate] = @YES;
-        self.prefsDict[CopyMateStartAtLogin] = @YES;
+        self.prefsDict[CopyMateStartAtLogin] = @NO;
         
         self.prefsDict[CopyMateNotFirstRun] = @YES;
         
@@ -150,20 +163,20 @@
         [self.prefsDict addObserver:self forKeyPath:[key description]
                             options:NSKeyValueObservingOptionNew context:(__bridge void *)(key)];
     }
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDefaultsDidChange:) name:NSUserDefaultsDidChangeNotification object:self.defaults];
-    
+
     self.currentFormat = self.prefsDict[CopyMateDefaultFormat];
     self.prefController.prefsDict = self.prefsDict;
 }
 
 -(void)persistDefaults
 {
+    NSLog(@"==> persistDefaults");
     [self.defaults setPersistentDomain:self.prefsDict forName:[[NSBundle mainBundle] bundleIdentifier]];
 }
 
 -(void)registerShortcuts
 {
+    NSLog(@"==> start registerShortcuts");
     void(^copyHandler)(void) = ^{
         [self copyAppendImpl];
     };
@@ -181,6 +194,8 @@
     [self registerShortcut:MASPrefKeyCopyShortcut Keycode:kVK_ANSI_C Handler:copyHandler];
     [self registerShortcut:MASPrefKeyDefaultFormatShortcut Keycode:kVK_ANSI_1 Handler:defaultFormatHandler];
     [self registerShortcut:MASPrefKeyAlterFormatShortcut Keycode:kVK_ANSI_2 Handler:alterFormatHandler];
+    
+    NSLog(@"==> end registerShortcuts");
 }
 
 -(void)copyAppendImpl

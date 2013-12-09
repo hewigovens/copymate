@@ -90,8 +90,13 @@ typedef enum {
     [title addAttribute:NSForegroundColorAttributeName value:[NSColor blueColor] range:titleRange];
     [self.homepageButton setAttributedTitle:title];
     
-    [self.defaultTextField setStringValue:[self escapeControlString:self.prefsDict[CopyMateDefaultFormat]]];
-    [self.alterTextField setStringValue:[self escapeControlString:self.prefsDict[CopyMateAlterFormat]]];
+    if (self.prefsDict[CopyMateDefaultFormat]) {
+        [self.defaultTextField setStringValue:[self escapeControlString:self.prefsDict[CopyMateDefaultFormat]]];
+    }
+    
+    if (self.prefsDict[CopyMateAlterFormat]) {
+        [self.alterTextField setStringValue:[self escapeControlString:self.prefsDict[CopyMateAlterFormat]]];
+    }
     
     self.defaultTextField.delegate = self;
     self.alterTextField.delegate = self;
