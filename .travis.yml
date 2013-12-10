@@ -2,7 +2,7 @@ language: objective-c
 xcode_project: CopyMate.xcodeproj
 xcode_scheme: CopyMate
 before_script: ./scripts/add-key.sh
-script: 
+script:
 - git submodule update --init
 - xctool -project CopyMate.xcodeproj -scheme CopyMate
 after_success: ./scripts/upload-and-notify.sh
@@ -11,3 +11,4 @@ env:
   global:
   - secure: jDdNAIc7VPWfTWEgGRvyzcpVyEAQdzpcrM4B9xPnQpBh37c/ePbTL9R1NtBogzn22b9dS8bZ5hnF3/WUFTG7BJTw7lGhcPNHV2/pYrJBYAbi87+EoD3UkSqekSbtMEihR9qppRwz+7Bp1OWPEzhYDbWQK8alvL3WdoiplzcNSOE=
   - secure: JfDTcqP0q9VJFxS3kaIIJSePjqHx77r3cQBcNmimUGS2JcfxUyre+WrKhj8/bpM1BkHcl4H4XyL91I8UuVWmpO5SAWlXO5+6Fsp9H4dlXxjttcImy1a1RD0rOTez0PRZEeLj2vkiOoU9YGEr5a6PC5Vq8LErRVh0GVV4FPcJBR8=
+  - secure: cuGAu1hlYpVv27d/CS0nMHJyd05m2txUmRJbTeHo6Mgt0fYgSMGc0HNXkoYLW3eISQ6ZzCvGxh+xOH12Exuf0CEL2kmuj4s4VTJchPQTGQKFedU9IUd/5+pX1hKc0ppMtUXxnux0fJCwhAyBGsBfcdEM7FvZCtCTodj1qrht1W4=
