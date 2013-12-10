@@ -5,8 +5,8 @@ before_script: ./scripts/add-key.sh
 script:
 - git submodule update --init
 - xcodebuild -project CopyMate.xcodeproj
-- xctool -version
-- xctool -project CopyMate.xcodeproj -scheme CopyMate -configuration Release
+# - xctool -version
+# - xctool -project CopyMate.xcodeproj -scheme CopyMate -configuration Release
 after_success: ./scripts/upload-and-notify.sh
 after_script: ./scripts/remove-key.sh
 env:
