@@ -10,6 +10,7 @@
 #import "CMPreferencesController.h"
 #import "MASShortcutView.h"
 #import "MASShortcutView+UserDefaults.h"
+#import "NSString+Extensions.h"
 #import <Sparkle/Sparkle.h>
 
 
@@ -67,8 +68,13 @@ typedef enum {
 
 - (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor
 {
-    //FIXME check input
-    return YES;
+    if ([fieldEditor.string countOccurencesOfString:@"%@"] == 2) {
+        return YES;
+    } else{
+        NSAlert* alert = [NSAlert alertWithMessageText:@"Invalid format" defaultButton:@"OK" alternateButton:nil otherButton:nil informativeTextWithFormat:@"format string should only contain two %@", @"%@"];
+        [alert runModal];
+        return NO;
+    }
 }
 
 #pragma mark UI
@@ -99,12 +105,14 @@ typedef enum {
     [title addAttribute:NSForegroundColorAttributeName value:[NSColor blueColor] range:titleRange];
     [self.homepageButton setAttributedTitle:title];
     
-    if (self.prefsDict[CopyMateDefaultFormat]) {
-        [self.defaultTextField setStringValue:[self escapeControlString:self.prefsDict[CopyMateDefaultFormat]]];
+    NSString* format = self.prefsDict[CopyMateDefaultFormat];
+    if (format) {
+        [self.defaultTextField setStringValue:[format stringByEscapeControlCharacters]];
     }
     
-    if (self.prefsDict[CopyMateAlterFormat]) {
-        [self.alterTextField setStringValue:[self escapeControlString:self.prefsDict[CopyMateAlterFormat]]];
+    format = self.prefsDict[CopyMateAlterFormat];
+    if (format) {
+        [self.alterTextField setStringValue:[format stringByEscapeControlCharacters]];
     }
     
     self.defaultTextField.delegate = self;
@@ -137,30 +145,6 @@ typedef enum {
     
     [self.window setFrame:windowFrame display:YES animate:animated];
     [self.window displayIfNeeded];
-}
-
-- (NSString *)escapeControlString:(NSString*) aString {
-    NSMutableString *oldString = [[NSMutableString alloc] initWithString:aString];
-    NSRange range = NSMakeRange(0, [oldString length]);
-    NSArray *toReplace = @[@"\0", @"\t", @"\n", @"\f", @"\r", @"\e"];
-    NSArray *replaceWith = @[@"\\0", @"\\t", @"\\n", @"\\f", @"\\r", @"\\e"];
-    for (NSUInteger i = 0, count = [toReplace count]; i < count; ++i) {
-        [oldString replaceOccurrencesOfString:[toReplace objectAtIndex:i] withString:[replaceWith objectAtIndex:i] options:0 range:range];
-    }
-    NSString *newString = [NSString stringWithFormat:@"%@", oldString];
-    return newString;
-}
-
-- (NSString *)unEscapeControlString:(NSString*) aString {
-    NSMutableString *oldString = [[NSMutableString alloc] initWithString:aString];
-    NSArray *toReplace = @[@"\\0", @"\\t", @"\\n", @"\\f", @"\\r", @"\\e"];
-    NSArray *replaceWith = @[@"\0", @"\t", @"\n", @"\f", @"\r", @"\e"];
-    for (NSUInteger i = 0, count = [toReplace count]; i < count; ++i) {
-        NSRange range = NSMakeRange(0, [oldString length]);
-        [oldString replaceOccurrencesOfString:[toReplace objectAtIndex:i] withString:[replaceWith objectAtIndex:i] options:0 range:range];
-    }
-    NSString *newString = [NSString stringWithFormat:@"%@", oldString];
-    return newString;
 }
 
 -(NSView*)viewForTag:(NSUInteger)tag{
@@ -220,9 +204,9 @@ typedef enum {
 - (IBAction)enterKeyPressed:(id)sender{
     NSTextField* textField = (NSTextField*)sender;
     if (textField == self.defaultTextField) {
-        self.prefsDict[CopyMateDefaultFormat] = [self unEscapeControlString:textField.stringValue];
+        self.prefsDict[CopyMateDefaultFormat] = [textField.stringValue stringByEscapeControlCharacters];
     } else if (textField == self.alterTextField){
-        self.prefsDict[CopyMateAlterFormat] = [self unEscapeControlString:textField.stringValue];
+        self.prefsDict[CopyMateAlterFormat] = [textField.stringValue stringByEscapeControlCharacters];
     }
 }
 

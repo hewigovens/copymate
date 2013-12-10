@@ -35,6 +35,10 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+#ifndef DEBUG
+    NSString* logPath = [NSString stringWithFormat:@"%@/Library/Logs/CopyMate.log", NSHomeDirectory()];
+    freopen([logPath fileSystemRepresentation], "a+", stderr);
+#endif
     [self setupStatusItem];
     [self setupPreferences];
     [self registerShortcuts];
@@ -217,18 +221,26 @@
 
 -(void)copyAppendImpl
 {
-    NSString* lastCopyString = [[NSPasteboard generalPasteboard] stringForType:NSStringPboardType];
-    
-    QCUIElement *focusedElement = [QCUIElement focusedElement];
-    QCUIElement *sourceApplicationElement = [focusedElement application];
-    NSString *editString = [sourceApplicationElement readString];
-    
-    if (editString) {
-        NSString* appendString = [NSString stringWithFormat:self.currentFormat, lastCopyString, editString];
-        NSLog(@"==> append string result:%@", appendString);
+    @try
+    {
+        NSString* lastCopyString = [[NSPasteboard generalPasteboard] stringForType:NSStringPboardType];
         
-        [[NSPasteboard generalPasteboard] clearContents];
-        [[NSPasteboard generalPasteboard] writeObjects:@[appendString]];
+        QCUIElement *focusedElement = [QCUIElement focusedElement];
+        QCUIElement *sourceApplicationElement = [focusedElement application];
+        NSString *editString = [sourceApplicationElement readString];
+        
+        if (editString) {
+            NSString* appendString = [NSString stringWithFormat:self.currentFormat, lastCopyString, editString];
+            NSLog(@"==> append string result:%@", appendString);
+            
+            [[NSPasteboard generalPasteboard] clearContents];
+            [[NSPasteboard generalPasteboard] writeObjects:@[appendString]];
+        }
+
+    }
+    @catch (NSException *exception)
+    {
+        NSLog(@"==> copyAppendImpl failed:%@", exception.reason);
     }
 }
 

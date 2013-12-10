@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB5CEE9E18575D460030541D /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5CEE9D18575D460030541D /* NSString+Extensions.m */; };
 		BBCCD86318521C320041B622 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCCD86218521C320041B622 /* Cocoa.framework */; };
 		BBCCD86D18521C320041B622 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD86B18521C320041B622 /* InfoPlist.strings */; };
 		BBCCD86F18521C320041B622 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD86E18521C320041B622 /* main.m */; };
@@ -63,6 +64,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BB5CEE9C18575D460030541D /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
+		BB5CEE9D18575D460030541D /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
 		BBCCD85F18521C320041B622 /* CopyMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CopyMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCCD86218521C320041B622 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		BBCCD86518521C320041B622 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -181,6 +184,8 @@
 				BBCCD87518521C320041B622 /* AppDelegate.m */,
 				BBCCD8B7185227F50041B622 /* CMPreferencesController.h */,
 				BBCCD8B8185227F50041B622 /* CMPreferencesController.m */,
+				BB5CEE9C18575D460030541D /* NSString+Extensions.h */,
+				BB5CEE9D18575D460030541D /* NSString+Extensions.m */,
 				BBCCD87718521C320041B622 /* MainMenu.xib */,
 				BBCCD8B9185227F50041B622 /* CMPreferencesController.xib */,
 				BBCCD8C51853732A0041B622 /* Constants.h */,
@@ -371,6 +376,7 @@
 				BBCCD8C718537B990041B622 /* Constants.m in Sources */,
 				BBCCD8AE185226B10041B622 /* MASShortcut+UserDefaults.m in Sources */,
 				BBCCD8AF185226B10041B622 /* MASShortcut.m in Sources */,
+				BB5CEE9E18575D460030541D /* NSString+Extensions.m in Sources */,
 				BBCCD8AD185226B10041B622 /* MASShortcut+Monitoring.m in Sources */,
 				BBCCD8B0185226B10041B622 /* MASShortcutView+UserDefaults.m in Sources */,
 				BBCCD8BA185227F50041B622 /* CMPreferencesController.m in Sources */,
