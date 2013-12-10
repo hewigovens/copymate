@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13A3028" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4511" systemVersion="13A603" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1080" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4511"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CMPreferencesController">
@@ -16,6 +16,7 @@
                 <outlet property="defaultTextField" destination="tmD-zE-xH2" id="Dom-N9-CQ1"/>
                 <outlet property="generalView" destination="RGr-fH-zYM" id="3Ke-EV-rdJ"/>
                 <outlet property="homepageButton" destination="Szo-Y8-Rrs" id="ctk-wL-dkf"/>
+                <outlet property="lastUpdateLabel" destination="RcO-YF-pQf" id="yJF-Dw-PDZ"/>
                 <outlet property="shortcutsView" destination="eCS-sM-Cm8" id="CXp-mZ-tay"/>
                 <outlet property="startupCheckbox" destination="C67-vn-tEY" id="aoK-cu-czk"/>
                 <outlet property="toolbar" destination="wGH-mf-8Zr" id="2ZB-jM-VMH"/>
@@ -25,11 +26,10 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1">
+        <window title="CopyMate Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="443" height="156"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="contentRect" x="1182" y="669" width="443" height="156"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="443" height="156"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -67,7 +67,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C67-vn-tEY">
-                    <rect key="frame" x="124" y="88" width="126" height="18"/>
+                    <rect key="frame" x="108" y="94" width="126" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Launch on Login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="0Ew-vv-N9J">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -78,18 +78,46 @@
                         <binding destination="6mU-E2-QG7" name="value" keyPath="values.CMStartAtLogin" id="FjN-Fb-ZfQ"/>
                     </connections>
                 </button>
-                <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfR-cW-iqg">
-                    <rect key="frame" x="124" y="63" width="196" height="18"/>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfR-cW-iqg">
+                    <rect key="frame" x="108" y="70" width="207" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="Automatically check update" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="1gK-yd-aaM">
+                    <buttonCell key="cell" type="check" title="Automatically check updates:" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="1gK-yd-aaM">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="toggleCheckUpdate:" target="-2" id="7kU-LD-MKN"/>
-                        <binding destination="6mU-E2-QG7" name="value" keyPath="values.CMAutoCheckUpdate" id="8MO-22-poZ"/>
+                        <binding destination="o2P-rp-b7Y" name="value" keyPath="automaticallyChecksForUpdates" id="Cbl-SL-fxQ"/>
                     </connections>
                 </button>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wMI-gV-KW8">
+                    <rect key="frame" x="316" y="64" width="75" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="Hourly" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="3600" imageScaling="proportionallyDown" inset="2" selectedItem="39N-rh-fcq" id="ace-YO-u0B">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" title="OtherViews" id="QFf-ff-6bT">
+                            <items>
+                                <menuItem title="Hourly" state="on" tag="3600" id="39N-rh-fcq"/>
+                                <menuItem title="Daily" tag="86400" id="MjA-bv-ldi"/>
+                                <menuItem title="Weekly" tag="604800" id="fAN-lo-mVS"/>
+                                <menuItem title="Monthly" tag="2629800" id="rso-2l-Vsc"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <binding destination="o2P-rp-b7Y" name="enabled" keyPath="automaticallyChecksForUpdates" id="XHA-1e-5ox"/>
+                        <binding destination="o2P-rp-b7Y" name="selectedTag" keyPath="updateCheckInterval" id="XeF-3Q-aOA"/>
+                    </connections>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RcO-YF-pQf">
+                    <rect key="frame" x="128" y="45" width="262" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="SD1-JI-Iv1">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
         </customView>
         <customView identifier="kCMGerneralTab" id="eCS-sM-Cm8" userLabel="Shortcuts View">
@@ -97,7 +125,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <box autoresizesSubviews="NO" fixedFrame="YES" title="Shortcuts" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="BdY-K8-rS5">
-                    <rect key="frame" x="12" y="156" width="373" height="120"/>
+                    <rect key="frame" x="14" y="156" width="373" height="120"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView">
                         <rect key="frame" x="1" y="1" width="371" height="104"/>
@@ -148,14 +176,14 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
                 <box autoresizesSubviews="NO" fixedFrame="YES" title="Separators" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="yOZ-ih-reS">
-                    <rect key="frame" x="12" y="16" width="373" height="114"/>
+                    <rect key="frame" x="14" y="16" width="373" height="114"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <view key="contentView">
                         <rect key="frame" x="1" y="1" width="371" height="98"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tmD-zE-xH2">
-                                <rect key="frame" x="184" y="57" width="151" height="22"/>
+                                <rect key="frame" x="188" y="57" width="151" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="bZ6-6o-FcH">
                                     <font key="font" metaFont="system"/>
@@ -167,7 +195,7 @@
                                 </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JMj-GH-7xT">
-                                <rect key="frame" x="184" y="34" width="151" height="22"/>
+                                <rect key="frame" x="188" y="34" width="151" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="8f5-JV-EqF">
                                     <font key="font" metaFont="system"/>
@@ -248,6 +276,7 @@
             </subviews>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="6mU-E2-QG7"/>
+        <customObject id="o2P-rp-b7Y" userLabel="SUUpdater" customClass="SUUpdater"/>
     </objects>
     <resources>
         <image name="NSInfo" width="32" height="32"/>

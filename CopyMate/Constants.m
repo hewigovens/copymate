@@ -15,5 +15,5 @@ NSString * const CopyMateDefaultFormat           = @"CMDefaultFormat";
 NSString * const CopyMateAlterFormat             = @"CMAlterFormat";
 NSString * const CopyMateStartAtLogin            = @"CMStartAtLogin";
 NSString * const CopyMateAutoCheckUpdate         = @"CMAutoCheckUpdate";
-NSString * const CopyMateHomepage                = @"http://kernelpanic.im/copymate";
+NSString * const CopyMateHomepage                = @"http://github.com/hewigovens/copymate";
 NSString * const CopyMateNotFirstRun             = @"CopyMateNotFirstRun";

@@ -34,6 +34,8 @@
 	<string>Copyright © 2013 kernelpanic.im. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
+	<key>SUFeedURL</key>
+	<string>https://raw.github.com/hewigovens/copymate/master/updates/appcast.xml</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

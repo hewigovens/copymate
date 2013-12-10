@@ -1,3 +1,3 @@
 [submodule "MASShortcut"]
-	path = MASShortcut
+	path = thirdparty/MASShortcut
 	url = https://github.com/shpakovski/MASShortcut.git

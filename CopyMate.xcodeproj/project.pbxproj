@@ -26,7 +26,6 @@
 		BBCCD8B0185226B10041B622 /* MASShortcutView+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD8A7185226B10041B622 /* MASShortcutView+UserDefaults.m */; };
 		BBCCD8B1185226B10041B622 /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD8A9185226B10041B622 /* MASShortcutView.m */; };
 		BBCCD8B2185226B10041B622 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8AA185226B10041B622 /* README.md */; };
-		BBCCD8B4185227140041B622 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBCCD8B3185227140041B622 /* Carbon.framework */; };
 		BBCCD8BA185227F50041B622 /* CMPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD8B8185227F50041B622 /* CMPreferencesController.m */; };
 		BBCCD8BB185227F50041B622 /* CMPreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8B9185227F50041B622 /* CMPreferencesController.xib */; };
 		BBCCD8C718537B990041B622 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCCD8C618537B990041B622 /* Constants.m */; };
@@ -34,6 +33,9 @@
 		BBCCD8CF185414870041B622 /* PrefsKeyboard.tiff in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8CB185414870041B622 /* PrefsKeyboard.tiff */; };
 		BBCCD8D0185414870041B622 /* statusMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8CC185414870041B622 /* statusMenu.png */; };
 		BBCCD8D1185414870041B622 /* statusMenu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBCCD8CD185414870041B622 /* statusMenu@2x.png */; };
+		D94BE8761856C32D0021F570 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94BE8751856C32D0021F570 /* Carbon.framework */; };
+		D94BE8781856C34A0021F570 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94BE8771856C34A0021F570 /* Sparkle.framework */; };
+		D94BE87A1856C3E50021F570 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D94BE8771856C34A0021F570 /* Sparkle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +48,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D94BE8791856C3DA0021F570 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D94BE87A1856C3E50021F570 /* Sparkle.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		BBCCD85F18521C320041B622 /* CopyMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CopyMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCCD86218521C320041B622 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		BBCCD86518521C320041B622 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		BBCCD86618521C320041B622 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		BBCCD86718521C320041B622 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BBCCD86A18521C320041B622 /* CopyMate-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CopyMate-Info.plist"; sourceTree = "<group>"; };
 		BBCCD86C18521C320041B622 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -81,7 +96,6 @@
 		BBCCD8A8185226B10041B622 /* MASShortcutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShortcutView.h; sourceTree = "<group>"; };
 		BBCCD8A9185226B10041B622 /* MASShortcutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShortcutView.m; sourceTree = "<group>"; };
 		BBCCD8AA185226B10041B622 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		BBCCD8B3185227140041B622 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		BBCCD8B7185227F50041B622 /* CMPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPreferencesController.h; sourceTree = "<group>"; };
 		BBCCD8B8185227F50041B622 /* CMPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPreferencesController.m; sourceTree = "<group>"; };
 		BBCCD8B9185227F50041B622 /* CMPreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMPreferencesController.xib; sourceTree = "<group>"; };
@@ -91,6 +105,8 @@
 		BBCCD8CB185414870041B622 /* PrefsKeyboard.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = PrefsKeyboard.tiff; path = Images/PrefsKeyboard.tiff; sourceTree = "<group>"; };
 		BBCCD8CC185414870041B622 /* statusMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = statusMenu.png; path = Images/statusMenu.png; sourceTree = "<group>"; };
 		BBCCD8CD185414870041B622 /* statusMenu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "statusMenu@2x.png"; path = "Images/statusMenu@2x.png"; sourceTree = "<group>"; };
+		D94BE8751856C32D0021F570 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		D94BE8771856C34A0021F570 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = thirdparty/Sparkle/Sparkle.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +114,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBCCD8B4185227140041B622 /* Carbon.framework in Frameworks */,
+				D94BE8781856C34A0021F570 /* Sparkle.framework in Frameworks */,
+				D94BE8761856C32D0021F570 /* Carbon.framework in Frameworks */,
 				BBCCD86318521C320041B622 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +154,8 @@
 		BBCCD86118521C320041B622 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BBCCD8B3185227140041B622 /* Carbon.framework */,
+				D94BE8771856C34A0021F570 /* Sparkle.framework */,
+				D94BE8751856C32D0021F570 /* Carbon.framework */,
 				BBCCD86218521C320041B622 /* Cocoa.framework */,
 				BBCCD88118521C320041B622 /* XCTest.framework */,
 				BBCCD86418521C320041B622 /* Other Frameworks */,
@@ -149,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				BBCCD86518521C320041B622 /* AppKit.framework */,
-				BBCCD86618521C320041B622 /* CoreData.framework */,
 				BBCCD86718521C320041B622 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
@@ -231,7 +248,8 @@
 				BBCCD8A9185226B10041B622 /* MASShortcutView.m */,
 				BBCCD8AA185226B10041B622 /* README.md */,
 			);
-			path = MASShortcut;
+			name = MASShortcut;
+			path = thirdparty/MASShortcut;
 			sourceTree = SOURCE_ROOT;
 		};
 		BBCCD8D21854148B0041B622 /* Images */ = {
@@ -255,6 +273,7 @@
 				BBCCD85B18521C320041B622 /* Sources */,
 				BBCCD85C18521C320041B622 /* Frameworks */,
 				BBCCD85D18521C320041B622 /* Resources */,
+				D94BE8791856C3DA0021F570 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -483,9 +502,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/thirdparty/Sparkle",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CopyMate/CopyMate-Prefix.pch";
 				INFOPLIST_FILE = "CopyMate/CopyMate-Info.plist";
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -497,9 +521,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/thirdparty/Sparkle",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CopyMate/CopyMate-Prefix.pch";
 				INFOPLIST_FILE = "CopyMate/CopyMate-Info.plist";
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -564,6 +593,7 @@
 				BBCCD89218521C320041B622 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BBCCD89318521C320041B622 /* Build configuration list for PBXNativeTarget "CopyMateTests" */ = {
 			isa = XCConfigurationList;
@@ -572,6 +602,7 @@
 				BBCCD89518521C320041B622 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

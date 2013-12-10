@@ -16,6 +16,8 @@
 #import "MASShortcut+UserDefaults.h"
 #import "MASShortcut+Monitoring.h"
 
+#import <Sparkle/Sparkle.h>
+
 @interface AppDelegate()
 
 @property (strong, nonatomic) NSStatusItem* statusItem;
@@ -68,6 +70,11 @@
     dispatch_once(&onceToken, ^{
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDefaultsDidChange:) name:NSUserDefaultsDidChangeNotification object:self.defaults];
     });
+}
+
+-(void)checkForUpdates:(id)sender{
+    NSLog(@"==> checkForUpdates");
+    [[SUUpdater sharedUpdater] checkForUpdates:sender];
 }
 
 -(void)quitApp{
@@ -128,6 +135,8 @@
     [statusMenu addItem:[NSMenuItem separatorItem]];
     [statusMenu addItemWithTitle:@"Preferences..." action:@selector(openPreferences) keyEquivalent:@","];
     [statusMenu addItem:[NSMenuItem separatorItem]];
+    [statusMenu addItemWithTitle:@"Check for Updates..." action:@selector(checkForUpdates:) keyEquivalent:@""];
+    [statusMenu addItem:[NSMenuItem separatorItem]];
     [statusMenu addItemWithTitle:@"Quit" action:@selector(quitApp) keyEquivalent:@"q"];
     self.statusItem.menu = statusMenu;
 }
@@ -137,11 +146,7 @@
     self.prefController = [[CMPreferencesController alloc] initWithWindowNibName:@"CMPreferencesController"];
     
     NSDictionary* prefsDict = [self.defaults persistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]];
-    if (prefsDict) {
-        self.prefsDict = [prefsDict mutableCopy];
-    } else{
-        self.prefsDict = [NSMutableDictionary new];
-    }
+    self.prefsDict = [[NSMutableDictionary dictionaryWithDictionary:prefsDict] mutableCopy];
     
     if (![self.defaults objectForKey:CopyMateNotFirstRun]) {
         

@@ -10,6 +10,7 @@
 #import "CMPreferencesController.h"
 #import "MASShortcutView.h"
 #import "MASShortcutView+UserDefaults.h"
+#import <Sparkle/Sparkle.h>
 
 
 typedef enum {
@@ -35,6 +36,7 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet NSTextField* alterTextField;
 @property (weak, nonatomic) IBOutlet NSButton* homepageButton;
 @property (weak, nonatomic) IBOutlet NSTextField* versionLabel;
+@property (weak, nonatomic) IBOutlet NSTextField* lastUpdateLabel;
 
 @property (assign, nonatomic) NSSize generalSize;
 @property (assign, nonatomic) NSSize shortcutSize;
@@ -83,6 +85,13 @@ typedef enum {
     
     NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
     [self.versionLabel setStringValue:infoDict[@"CFBundleShortVersionString"]];
+    
+    NSDateFormatter* dateFormatter = [NSDateFormatter new];
+    dateFormatter.locale = [NSLocale currentLocale];
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    NSDate* date = [[SUUpdater sharedUpdater] lastUpdateCheckDate];
+    NSString* dateString = [NSString stringWithFormat:@"Last Check: %@",[dateFormatter stringFromDate:date]];
+    [self.lastUpdateLabel setStringValue:dateString];
     
     NSMutableAttributedString* title = [[NSMutableAttributedString alloc] initWithString:CopyMateHomepage];
     NSRange titleRange = NSMakeRange(0, [CopyMateHomepage length]);
