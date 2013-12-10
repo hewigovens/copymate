@@ -156,7 +156,6 @@
         self.prefsDict[CopyMateAlterFormat] = @"%@ %@";
         self.currentFormat = self.prefsDict[CopyMateAlterFormat];
         
-        self.prefsDict[CopyMateAutoCheckUpdate] = @YES;
         self.prefsDict[CopyMateStartAtLogin] = @NO;
         
         self.prefsDict[CopyMateNotFirstRun] = @YES;

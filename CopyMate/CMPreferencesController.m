@@ -212,12 +212,6 @@ typedef enum {
     self.prefsDict[CopyMateStartAtLogin] = @(enable);
 }
 
-- (IBAction)toggleCheckUpdate:(id)sender
-{
-    NSButton* button = (NSButton*)sender;
-    self.prefsDict[CopyMateAutoCheckUpdate] = button.state == 0? @NO:@YES;
-}
-
 - (IBAction)openHomepage:(id)sender
 {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:CopyMateHomepage]];
