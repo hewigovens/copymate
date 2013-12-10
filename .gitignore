@@ -5,3 +5,6 @@ build/
 backup/
 *.swp
 .DS_Store
+*.config
+*.cer
+*.p12

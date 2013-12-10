@@ -1,0 +1,11 @@
+language: objective-c
+xcode_project: CopyMate.xcodeproj
+xcode_scheme: CopyMate
+before_script: ./scripts/add-key.sh
+script: ./scripts/build.sh
+after_success: ./scripts/upload-and-notify.sh
+after_script: ./scripts/remove-key.sh
+env:
+  global:
+  - secure: jDdNAIc7VPWfTWEgGRvyzcpVyEAQdzpcrM4B9xPnQpBh37c/ePbTL9R1NtBogzn22b9dS8bZ5hnF3/WUFTG7BJTw7lGhcPNHV2/pYrJBYAbi87+EoD3UkSqekSbtMEihR9qppRwz+7Bp1OWPEzhYDbWQK8alvL3WdoiplzcNSOE=
+  - secure: JfDTcqP0q9VJFxS3kaIIJSePjqHx77r3cQBcNmimUGS2JcfxUyre+WrKhj8/bpM1BkHcl4H4XyL91I8UuVWmpO5SAWlXO5+6Fsp9H4dlXxjttcImy1a1RD0rOTez0PRZEeLj2vkiOoU9YGEr5a6PC5Vq8LErRVh0GVV4FPcJBR8=

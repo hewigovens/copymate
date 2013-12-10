@@ -1,5 +1,6 @@
 ##CopyMate
 
+[![Build Status](https://travis-ci.org/hewigovens/copymate.png)](https://travis-ci.org/hewigovens/copymate)
 
 ####Copy Anywhere, Paste once.
 
