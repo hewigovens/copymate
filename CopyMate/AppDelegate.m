@@ -38,11 +38,22 @@
     [self setupStatusItem];
     [self setupPreferences];
     [self registerShortcuts];
+    
+    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification{
     [self persistDefaults];
 }
+
+#pragma mark NSUserNotificationCenterDelegate
+
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification
+{
+    //always show banner
+    return YES;
+}
+
 
 #pragma mark properties
 
@@ -187,11 +198,13 @@
     
     void(^defaultFormatHandler)(void) = ^{
         self.currentFormat = self.prefsDict[CopyMateDefaultFormat];
+        [self postUserNotification:@"Default format is actived"];
         NSLog(@"==> switch to default format");
     };
     
     void(^alterFormatHandler)(void) = ^{
         self.currentFormat = self.prefsDict[CopyMateAlterFormat];
+        [self postUserNotification:@"Alternative format is actived"];
         NSLog(@"==> switch to alter format");
     };
     
@@ -231,6 +244,15 @@
         [self persistDefaults];
         [MASShortcut addGlobalHotkeyMonitorWithShortcut:shortcut handler:handler];
     }
+}
+
+-(void)postUserNotification:(NSString*)message
+{
+    [[NSUserNotificationCenter defaultUserNotificationCenter] removeAllDeliveredNotifications];
+    NSUserNotification* notification = [NSUserNotification new];
+    notification.title = @"CopyMate";
+    notification.informativeText = message;
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
 
 -(void)removeLoginItem{
