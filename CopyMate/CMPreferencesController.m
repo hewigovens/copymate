@@ -94,13 +94,14 @@ typedef enum {
     
     NSDateFormatter* dateFormatter = [NSDateFormatter new];
     dateFormatter.locale = [NSLocale currentLocale];
-    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+    dateFormatter.timeStyle = NSDateFormatterMediumStyle;
     NSDate* date = [[SUUpdater sharedUpdater] lastUpdateCheckDate];
-    NSString* dateString = [NSString stringWithFormat:@"Last Check: %@",[dateFormatter stringFromDate:date]];
+    NSString* dateString = [NSString stringWithFormat:@"Last check time: %@",[dateFormatter stringFromDate:date]];
     [self.lastUpdateLabel setStringValue:dateString];
     
-    NSMutableAttributedString* title = [[NSMutableAttributedString alloc] initWithString:CopyMateHomepage];
-    NSRange titleRange = NSMakeRange(0, [CopyMateHomepage length]);
+    NSMutableAttributedString* title = [[NSMutableAttributedString alloc] initWithString:CopyMateHome];
+    NSRange titleRange = NSMakeRange(0, [CopyMateHome length]);
     [title addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInt:NSSingleUnderlineStyle] range:titleRange];
     [title addAttribute:NSForegroundColorAttributeName value:[NSColor blueColor] range:titleRange];
     [self.homepageButton setAttributedTitle:title];
@@ -198,7 +199,7 @@ typedef enum {
 
 - (IBAction)openHomepage:(id)sender
 {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:CopyMateHomepage]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:CopyMateHomeLink]];
 }
 
 - (IBAction)enterKeyPressed:(id)sender{

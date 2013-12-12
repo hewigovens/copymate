@@ -16,7 +16,8 @@ extern NSString * const CopyMateDefaultFormat;
 extern NSString * const CopyMateAlterFormat;
 
 extern NSString * const CopyMateStartAtLogin;
-extern NSString * const CopyMateHomepage;
+extern NSString * const CopyMateHomeLink;
+extern NSString * const CopyMateHome;
 extern NSString * const CopyMateNotFirstRun;
 
 #endif
