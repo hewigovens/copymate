@@ -5,8 +5,6 @@ before_script: ./scripts/add-key.sh
 script:
 - git submodule update --init
 - xcodebuild -project CopyMate.xcodeproj
-# - xctool -version
-# - xctool -project CopyMate.xcodeproj -scheme CopyMate -configuration Release
 after_success: ./scripts/upload-and-notify.sh
 after_script: ./scripts/remove-key.sh
 env:
@@ -14,3 +12,5 @@ env:
   - secure: jDdNAIc7VPWfTWEgGRvyzcpVyEAQdzpcrM4B9xPnQpBh37c/ePbTL9R1NtBogzn22b9dS8bZ5hnF3/WUFTG7BJTw7lGhcPNHV2/pYrJBYAbi87+EoD3UkSqekSbtMEihR9qppRwz+7Bp1OWPEzhYDbWQK8alvL3WdoiplzcNSOE=
   - secure: JfDTcqP0q9VJFxS3kaIIJSePjqHx77r3cQBcNmimUGS2JcfxUyre+WrKhj8/bpM1BkHcl4H4XyL91I8UuVWmpO5SAWlXO5+6Fsp9H4dlXxjttcImy1a1RD0rOTez0PRZEeLj2vkiOoU9YGEr5a6PC5Vq8LErRVh0GVV4FPcJBR8=
   - secure: cuGAu1hlYpVv27d/CS0nMHJyd05m2txUmRJbTeHo6Mgt0fYgSMGc0HNXkoYLW3eISQ6ZzCvGxh+xOH12Exuf0CEL2kmuj4s4VTJchPQTGQKFedU9IUd/5+pX1hKc0ppMtUXxnux0fJCwhAyBGsBfcdEM7FvZCtCTodj1qrht1W4=
+  - secure: V5tfkZ9qUTEGAKc5EGx2bz6aal2aqQOrMZDK3G9xHL39iZs8Djhj2diFXnkUBw/HWLIjW9GhyK0hSYxiUBm3RWIt0/lmlA+Zs35ZOqGWFjHHrnff3467PKAQu0M3UwNT63EbqQS4HPzA3ubMMYtUyqiyl6VBMWrU4HVJCnO8t9s=
+  - secure: b4sTvJVSOWNZM53rCn84W4nSln4z/l0RwCcKzOrnfxutnONUfKA5W485BeGWZ+lxxk64eRDoCjGienrzJCVD4HbUY8UF30oIVIDWofsh+un6RZSH6VXa7eHJbV+aWq00vSBCByokgc1GlqAQptkK6BSPHaNuc6+1Ot1pNY7hRo0=

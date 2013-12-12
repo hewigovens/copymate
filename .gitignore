@@ -8,3 +8,4 @@ backup/
 *.config
 *.cer
 *.p12
+*.pyc
