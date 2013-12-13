@@ -1,6 +1,7 @@
 ##CopyMate
 
 [![Build Status](https://travis-ci.org/hewigovens/copymate.png)](https://travis-ci.org/hewigovens/copymate)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/hewigovens/copymate/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 ####Copy Anywhere, Paste once.
 
