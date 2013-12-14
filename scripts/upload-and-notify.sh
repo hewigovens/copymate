@@ -13,9 +13,9 @@ INDEX_HTML=$(cat <<EOF
 <p>Download latest build:<a href="https://dn-copymate.qbox.me/$BUILD_ZIP">$BUILD_ZIP</a></p>
 </html>
 EOF)
-INDEX_HTML_FILE="./index.html"
+INDEX_HTML_FILE="./errno-404"
 
-echo INDEX_HTML > $INDEX_HTML_FILE
+echo $INDEX_HTML > $INDEX_HTML_FILE
 
 pushd $BUILD_RELEASE_PATH
 zip -r $BUILD_ZIP "CopyMate.app"
