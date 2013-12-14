@@ -30,6 +30,7 @@ def main():
     if error is not None:
         sys.stderr.write('publish failed:%s' % error)
         return
+    print(ret)
 
 if __name__ == '__main__':
     main()
