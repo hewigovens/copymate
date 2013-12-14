@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Constants.h"
 #import "CMPreferencesController.h"
+#import "NSString+Extensions.h"
 
 #import "QuickCursor/QCUIElement.h"
 
@@ -24,6 +25,7 @@
 @property (strong, nonatomic) CMPreferencesController* prefController;
 @property (strong, nonatomic) NSMutableDictionary* prefsDict;
 @property (weak, nonatomic) NSString* currentFormat;
+@property (assign, nonatomic) BOOL isDefaultFormat;
 @property (readonly, nonatomic) NSPasteboard* pasteboard;
 @property (readonly, nonatomic) NSUserDefaults* defaults;
 
@@ -110,6 +112,16 @@
             [self addLoginItem];
         }
         [self persistDefaults];
+    } else if ([keyPath isEqualToString:CopyMateDefaultFormat]){
+        if (self.isDefaultFormat) {
+            NSLog(@"==> update current default format");
+            self.currentFormat = self.prefsDict[CopyMateDefaultFormat];
+        }
+    } else if ([keyPath isEqualToString:CopyMateAlterFormat]){
+        if (!self.isDefaultFormat) {
+            NSLog(@"==> update current alternative format");
+            self.currentFormat = self.prefsDict[CopyMateAlterFormat];
+        }
     }
 }
 
@@ -184,6 +196,7 @@
     }
 
     self.currentFormat = self.prefsDict[CopyMateDefaultFormat];
+    self.isDefaultFormat = YES;
     self.prefController.prefsDict = self.prefsDict;
 }
 
@@ -202,12 +215,14 @@
     
     void(^defaultFormatHandler)(void) = ^{
         self.currentFormat = self.prefsDict[CopyMateDefaultFormat];
+        self.isDefaultFormat = YES;
         [self postUserNotification:@"Default format is actived"];
         NSLog(@"==> switch to default format");
     };
     
     void(^alterFormatHandler)(void) = ^{
         self.currentFormat = self.prefsDict[CopyMateAlterFormat];
+        self.isDefaultFormat = NO;
         [self postUserNotification:@"Alternative format is actived"];
         NSLog(@"==> switch to alter format");
     };
@@ -265,6 +280,7 @@
     notification.title = @"CopyMate";
     notification.informativeText = message;
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+    notification = nil;
 }
 
 -(void)removeLoginItem{

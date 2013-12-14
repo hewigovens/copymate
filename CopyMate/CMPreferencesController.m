@@ -99,12 +99,14 @@ typedef enum {
     NSDate* date = [[SUUpdater sharedUpdater] lastUpdateCheckDate];
     NSString* dateString = [NSString stringWithFormat:@"Last check time: %@",[dateFormatter stringFromDate:date]];
     [self.lastUpdateLabel setStringValue:dateString];
+    dateFormatter = nil;
     
     NSMutableAttributedString* title = [[NSMutableAttributedString alloc] initWithString:CopyMateHome];
     NSRange titleRange = NSMakeRange(0, [CopyMateHome length]);
     [title addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInt:NSSingleUnderlineStyle] range:titleRange];
     [title addAttribute:NSForegroundColorAttributeName value:[NSColor blueColor] range:titleRange];
     [self.homepageButton setAttributedTitle:title];
+    title = nil;
     
     NSString* format = self.prefsDict[CopyMateDefaultFormat];
     if (format) {
@@ -205,9 +207,9 @@ typedef enum {
 - (IBAction)enterKeyPressed:(id)sender{
     NSTextField* textField = (NSTextField*)sender;
     if (textField == self.defaultTextField) {
-        self.prefsDict[CopyMateDefaultFormat] = [textField.stringValue stringByEscapeControlCharacters];
+        self.prefsDict[CopyMateDefaultFormat] = [textField.stringValue stringByUnescapeControlCharacters];
     } else if (textField == self.alterTextField){
-        self.prefsDict[CopyMateAlterFormat] = [textField.stringValue stringByEscapeControlCharacters];
+        self.prefsDict[CopyMateAlterFormat] = [textField.stringValue stringByUnescapeControlCharacters];
     }
 }
 
