@@ -6,6 +6,8 @@ import qiniu.conf
 import qiniu.io
 import qiniu.rs
 
+BUCKET_NAME = 'kernelpanic-im-copymate'
+
 
 def main():
 
@@ -22,14 +24,22 @@ def main():
         sys.stderr.write('file not existed, skip upload')
         return
 
-    policy = qiniu.rs.PutPolicy('kernelpanic-im-copymate')
+    policy = qiniu.rs.PutPolicy(BUCKET_NAME)
+
+    # set overwrite index.html
+    policy.scope = '%s:index.html' % BUCKET_NAME
     uptoken = policy.token()
     identifier = os.path.basename(build_file)
 
+    #qiniu.rs.Client().delete(BUCKET_NAME, identifier)
     ret, error = qiniu.io.put_file(uptoken, identifier, build_file)
     if error is not None:
         sys.stderr.write('publish failed:%s' % error)
         return
+    if identifier == 'index.html':
+        # move index.html to 404
+        qiniu.rs.Client().move(BUCKET_NAME, identifier,
+                               BUCKET_NAME, 'errno-404')
     print(ret)
 
 if __name__ == '__main__':
