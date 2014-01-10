@@ -18,6 +18,7 @@
 #import "MASShortcut+Monitoring.h"
 
 #import <Sparkle/Sparkle.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate()
 
@@ -41,6 +42,7 @@
     NSString* logPath = [NSString stringWithFormat:@"%@/Library/Logs/CopyMate.log", NSHomeDirectory()];
     freopen([logPath fileSystemRepresentation], "a+", stderr);
 #endif
+    [Crashlytics startWithAPIKey:@"00294b074c27a6569db329a72df442fbff108a8c"];
     [self setupStatusItem];
     [self setupPreferences];
     [self registerShortcuts];
