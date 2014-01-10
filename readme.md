@@ -27,6 +27,10 @@ Demo:
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=KAIHvgIeef8
 " target="_blank"><img src="doc/demo_cover.png" width="100%" height="100%" border="10" /></a>
 
+
+Download from:[dn-copymate.qbox.me](https://dn-copymate.qbox.me)
+
+
 [![Support via Gittip](https://rawgithub.com/twolfson/gittip-badge/0.1.0/dist/gittip.png)](https://www.gittip.com/hewigovens/)
 
 ####Credits
